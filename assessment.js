@@ -126,10 +126,10 @@ function makeChatMessage (message, author){
 // #14 Create a function called coderTest that takes in an object that is a person. It looks to see if the person’s name is Jeremy and then changes the person object to have a property called lovesCode with a value of 10.  If their name is Brack set lovesCode to 0.  otherwise set lovesCode to 5.
 function coderTest (person){
 	if (person.name == "Jeremy") {
-		person.lovesCode == 10;
+		person.lovesCode = 10;
 	} else if (person.name == "Brack") {
-		person.lovesCode == 5;
-	}
+		person.lovesCode = 0;
+	} else {person.lovesCode = 5}
 };
 
 // #15 Create a function called outside that takes in a temperature (number), a humidity(number), and a cloudiness(number), in that order. Using the following to return the correct values
@@ -140,6 +140,19 @@ function coderTest (person){
     temperature over 80 or humidity over 50 or cloudiness over 50 - return "Hmm, probably not"
     Otherwise - return "I love outside"
 */
-
+function outside (temperature, humidity, cloudiness){
+	if (temperature > 80 && humidity > 40){
+		return "I'm all sweat";
+	} else if (temperature < 40 && cloudiness > 60) {
+		return "I have icecicles";
+	} else if (temperature > 80 && humidity < 40 && cloudiness < 20) {
+		return "I'm literally in the desert";
+	} else if (temperature > 80 || humidity > 50 || cloudiness > 50) {
+		return "Hmm, probably not";
+	} else {
+		return "I love outside"
+	}
+};
 // #16 Create a function called callerBack that takes in a function (holla) and a string parameter(back) and invokes it(holla) with the argument string(back) + ' back'."
 // example - If I call you with 'Give it' you should invoke holla with 'Give it back'
+var callerBack = (holla, back) => holla(back + " back");
